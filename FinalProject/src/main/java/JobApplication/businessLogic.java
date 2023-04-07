@@ -20,4 +20,30 @@ public class businessLogic {
         return appraisal;
     }
 
+    public String calculateClearanceLevel(employeeData employeeData){
+        String clearanceLevel = employeeData.getClearanceLevel();
+        int yearsEmployed = employeeData.getYearsEmployed();
+        if (yearsEmployed >= 5 && yearsEmployed < 10){
+            clearanceLevel = "Level 1";
+        }
+        else if(yearsEmployed >= 10 && yearsEmployed < 15){
+            clearanceLevel = "Level 2";
+        }
+        else if (yearsEmployed >= 15){
+            clearanceLevel = "Level 3";
+        }
+        else{
+            clearanceLevel = "None";
+        }
+        employeeData.setClearanceLevel(clearanceLevel);
+        return clearanceLevel;
+    }
+
+    public String changePhoneNumber(employeeData employeeData, String number){
+        String currentNumber = employeeData.getPhoneNumber();
+        String newNumber = number;
+        employeeData.setPhoneNumber(newNumber);
+        return newNumber;
+    }
+
 }
