@@ -10,6 +10,7 @@ public class employeeData {
     private int yearsEmployed;
     private String phoneNumber;
     private String clearanceLevel;
+    private String dateOfBirth;
 
     // getters
     public String getFirstName(){
@@ -24,9 +25,6 @@ public class employeeData {
     public int getAge(){
         return age;
     }
-    public String getEmail(){
-        return email;
-    }
     public int getEmpID(){
         return empID;
     }
@@ -38,6 +36,9 @@ public class employeeData {
     }
     public String getClearanceLevel(){
         return clearanceLevel;
+    }
+    public String getDateOfBirth(){
+        return dateOfBirth;
     }
 
 
@@ -65,12 +66,15 @@ public class employeeData {
         this.empID = empID;
     }
     public void setYearsEmployed(int years){
-        this.yearsEmployed = yearsEmployed;
+        this.yearsEmployed = years;
     }
     public void setPhoneNumber(String number){
         this.phoneNumber = number;
     }
     public void setClearanceLevel(String clearanceLevel){
         this.clearanceLevel = clearanceLevel;
+    }
+    public void setDateOfBirth(String DOB){
+        this.dateOfBirth = DOB;
     }
 }

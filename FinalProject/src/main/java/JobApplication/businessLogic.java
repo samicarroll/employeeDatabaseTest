@@ -21,7 +21,7 @@ public class businessLogic {
     }
 
     public String calculateClearanceLevel(employeeData employeeData){
-        String clearanceLevel = employeeData.getClearanceLevel();
+        String clearanceLevel;
         int yearsEmployed = employeeData.getYearsEmployed();
         if (yearsEmployed >= 5 && yearsEmployed < 10){
             clearanceLevel = "Level 1";
@@ -35,14 +35,22 @@ public class businessLogic {
         else{
             clearanceLevel = "None";
         }
-        employeeData.setClearanceLevel(clearanceLevel);
         return clearanceLevel;
     }
 
+    public String calculateEmpID(employeeData employeeData) {
+        String firstName = employeeData.getFirstName();
+        String lastName = employeeData.getLastName();
+        String dateOfBirth = employeeData.getDateOfBirth();
+
+        String yearOfBirth = dateOfBirth.substring(dateOfBirth.length() - 4);
+        String empID = String.format("%s%s-%s", firstName.charAt(0), lastName, yearOfBirth);
+
+        return empID;
+    }
     public String changePhoneNumber(employeeData employeeData, String number){
         String currentNumber = employeeData.getPhoneNumber();
         String newNumber = number;
-        employeeData.setPhoneNumber(newNumber);
         return newNumber;
     }
 
