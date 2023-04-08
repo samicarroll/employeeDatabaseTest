@@ -59,5 +59,16 @@ public class businessLogic {
             return number;
         }
     }
+    
+        public String changeStreetAddress(employeeData employeeData, String newStreetAddress) {
+        String address = employeeData.getStreetAddress();
+        String newAddress = newStreetAddress;
+        if(!address.equals(newAddress)){
+            return newAddress;
+        }
+        else {
+            return address;
+        }
+    }
 
 }
