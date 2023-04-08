@@ -48,10 +48,16 @@ public class businessLogic {
 
         return empID;
     }
-    public String changePhoneNumber(employeeData employeeData, String number){
-        String currentNumber = employeeData.getPhoneNumber();
-        String newNumber = number;
-        return newNumber;
+    
+    public String changePhoneNumber(employeeData employeeData, String newPhoneNum) {
+        String number = employeeData.getPhoneNumber();
+        String newNum = newPhoneNum;
+        if(!number.equals(newNum)){
+            return newNum;
+        }
+        else {
+            return number;
+        }
     }
 
 }
