@@ -1,4 +1,6 @@
 package JobApplication;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class businessLogic {
     public double calculateYearlySalary(employeeData employeeData) {
@@ -69,6 +71,12 @@ public class businessLogic {
         else {
             return address;
         }
+    }
+        public int calculateAge(employeeData employee) {
+        LocalDate birthDate = LocalDate.parse(employee.getDateOfBirth());
+        LocalDate currentDate = LocalDate.now();
+        int age = Period.between(birthDate, currentDate).getYears();
+        return age;
     }
 
 }
